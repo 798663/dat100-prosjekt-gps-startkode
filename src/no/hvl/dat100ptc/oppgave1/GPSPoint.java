@@ -30,7 +30,7 @@ public class GPSPoint {
 
 	public double getLatitude() {
 		
-	  return time;
+	  return latitude;
 		
 		}
 
