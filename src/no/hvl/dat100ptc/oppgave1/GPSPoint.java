@@ -36,19 +36,19 @@ public class GPSPoint {
 
 	public void setLatitude(double latitude) {
 		
-     this.latitude = latitude;
+     	this.latitude = latitude;
 		
 	}
 
 	public double getLongitude() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return longitude;
 		
 	}
 
 	public void setLongitude(double longitude) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		this.longitude = longitude;
 		
 	}
 
