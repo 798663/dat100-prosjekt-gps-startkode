@@ -26,8 +26,6 @@ public class GPSPoint {
 	public void setTime(int time) {
 this.time = time;
 		
-		
-		
 	}
 
 	public double getLatitude() {
@@ -57,13 +55,13 @@ this.time = time;
 
 	public double getElevation() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return elevation;
 		
 	}
 
 	public void setElevation(double elevation) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+this.elevation = elevation;
 		
 	}
 	
