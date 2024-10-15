@@ -8,12 +8,11 @@ public class GPSData {
 	private GPSPoint[] gpspoints;
 	protected int antall = 0;
 
-	
-	
 	public GPSData(int n) {
-        gpspoints = new GPSPoint[n];
-		this.antall = 0;
+
+	gpspoints = new GPSPoint[n];
 		
+		antall=0 ;
 	}
 
 	
