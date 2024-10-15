@@ -26,12 +26,7 @@ public class GPSPoint {
 	public void setTime(int time) {
      
 		this.time = time;
-		
-<<<<<<< HEAD
-		}
-=======
 	}
->>>>>>> 82442962d401de79a5d9d65f2be43d3cee98bd7d
 
 	public double getLatitude() {
 		
