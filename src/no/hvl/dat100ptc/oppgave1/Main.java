@@ -12,7 +12,8 @@ public class Main {
 		System.out.println();
 	
 		
-		
+	k1.setTime(0);
+		System.out.println(k1.getTime());
 		
 	}
 
