@@ -4,8 +4,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		GPSPoint getTime = new GPSPoint(5, 6, 8, 9);
+		GPSPoint k1 = new GPSPoint(5, 6, 8, 9);
 
+		
+		
+		System.out.println("Time: " + k1.getTime());
+		System.out.println();
+	
+		
+		
 		
 	}
 

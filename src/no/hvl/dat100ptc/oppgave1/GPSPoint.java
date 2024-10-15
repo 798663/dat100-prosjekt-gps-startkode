@@ -10,33 +10,22 @@ public class GPSPoint {
 	private double elevation;
 
 
-	GPSPoint getTime = new GPSPoint(5, 6, 8, 9);
-
-
 	public GPSPoint(int time, double latitude, double longitude, double elevation) {
 
 		this.time = time;
 		this.latitude = latitude;
 		this.longitude = longitude;
-		this.elevation = elevation;
-		
-
-		getTime();
-
-
-		
+		this.elevation = elevation;	
 	}
 
 	public int getTime() {
-
-		time = 5;
 		
 		return time;
 	}
 
 	public void setTime(int time) {
-				
-		throw new UnsupportedOperationException(TODO.method());
+
+		
 		
 	}
 
