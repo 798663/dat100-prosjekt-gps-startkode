@@ -68,10 +68,8 @@ this.elevation = elevation;
 	public String toString() {
 		
 		String str;
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO
+	str = time + " (" + latitude + "," + longitude + ") " + elevation +"\n";
+			return str;
 		
 	}
 }
