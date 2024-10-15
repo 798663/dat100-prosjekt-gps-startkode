@@ -4,7 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		// TODO
+		GPSPoint getTime = new GPSPoint(5, 6, 8, 9);
+
 		
 	}
 
