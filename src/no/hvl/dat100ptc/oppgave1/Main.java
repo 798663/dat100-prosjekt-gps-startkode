@@ -13,7 +13,29 @@ public class Main {
 	
 		
 	k1.setTime(0);
-		System.out.println(k1.getTime());
+		System.out.println("New time: " + k1.getTime());
+		System.out.println();
+		
+		
+		
+		
+		System.out.println("Elevation: " + k1.getElevation());
+		System.out.println();
+		
+		
+	k1.setElevation(30);
+	System.out.println("New elevation: " + k1.getElevation());
+	System.out.println();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
