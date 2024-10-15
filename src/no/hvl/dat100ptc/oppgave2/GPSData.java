@@ -8,11 +8,11 @@ public class GPSData {
 	private GPSPoint[] gpspoints;
 	protected int antall = 0;
 
-	public GPSData(int antall) {
+	public GPSData(int n) {
 
+	gpspoints = new GPSPoint[n];
 		
-		
-		// TODO
+		antall=0 ;
 	}
 
 	public GPSPoint[] getGPSPoints() {
