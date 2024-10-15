@@ -24,22 +24,20 @@ public class GPSPoint {
 	}
 
 	public void setTime(int time) {
-this.time = time;
+     
+		this.time = time;
 		
-		
-		
-	}
+		}
 
 	public double getLatitude() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+	  return time;
 		
-		
-	}
+		}
 
 	public void setLatitude(double latitude) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+     this.latitude = latitude;
 		
 	}
 
