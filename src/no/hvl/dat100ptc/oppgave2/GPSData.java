@@ -1,6 +1,5 @@
 package no.hvl.dat100ptc.oppgave2;
 
-import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSData {
@@ -10,35 +9,29 @@ public class GPSData {
 
 	public GPSData(int n) {
 
-	gpspoints = new GPSPoint[n];
+		gpspoints = new GPSPoint[n];
 		
 		antall=0 ;
 	}
 
-	
 
-	
 	public GPSPoint[] getGPSPoints() {
 	    return this.gpspoints;
 	}
 	
 	
-
-	
 	protected boolean insertGPS(GPSPoint gpspoint) {
       	
-    if (antall < gpspoints.length) {
-        		gpspoints[antall] = gpspoint;
-        		antall++;
+    	if (antall < gpspoints.length) {
+        	gpspoints[antall] = gpspoint;
+        	antall++;
         	
-        return true; 
-         }
-    else {
-	    return false;
-         }
-}
-
-	
+        	return true; 
+        }
+    	else {
+	    	return false;
+        }
+	}
 	
 
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
@@ -48,9 +41,9 @@ public class GPSData {
 		double longitude1 = Double.parseDouble(longitude);
 		double elevation1 = Double.parseDouble(elevation);
 	
-		 GPSPoint nyttGPSPunkt = new GPSPoint(time1, latitude1, longitude1, elevation1);
+		GPSPoint nyttGPSPunkt = new GPSPoint(time1, latitude1, longitude1, elevation1);
 		 
-		 return insertGPS(nyttGPSPunkt);
+		return insertGPS(nyttGPSPunkt);
 		
 	}
 
