@@ -25,11 +25,34 @@ public class GPSUtils {
 	public static double findMin(double[] da) {
 
 		double min;
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		
+		min = da[0];
+		
+		for (double d:da) {
+			if (d<min) {
+				min =d ;
+				
+			}
+		}
+		
+        return min;
 		
 	}
+	
+	public static void main(String[]args) {
+		
+		double[] verdiTest= {3.8,5.9,6.2,7.7,9.1};
+	   
+		double max = findMax (verdiTest);
+		double min = findMin (verdiTest);
+		
+		System.out.println("Største verdi" + max);
+		System.out.println("Minst" + min);
+		
+	
+	}
+	
+	
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
