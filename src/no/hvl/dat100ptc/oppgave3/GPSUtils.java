@@ -125,11 +125,12 @@ return speed;
 	}
 
 	public static String formatTime(int secs) {
-//få delt opp i timer min sec ved rest
-		
 		String timestr;
 		String TIMESEP = ":";
+int timer = secs/3600;
+secs = secs%3600;
 
+<<<<<<< HEAD
 		int timer = secs/3600;
 
         secs = secs%3600;
@@ -140,6 +141,15 @@ return speed;
 		
 		timestr = String.format("%10s", timer, TIMESEP, minutter, TIMESEP, sekunder);
 		
+=======
+int minutter = secs/60;
+
+
+int sekunder = secs%60;
+		
+		timestr = String.format("  %02d%s%02d%s%02d", timer, TIMESEP, minutter, TIMESEP, sekunder);
+			
+>>>>>>> 7d84ad9a53311e9890603b9a849d7b5b867440bd
 		return timestr;
 	}
 
@@ -149,12 +159,10 @@ return speed;
 	public static String formatDouble(double d) {
 
 		String str;
-
-		
-		str = String.format("%10s", d);
-		
+		str = String.format("%.2f", d);
+		str = str.replace(',','.');
 		
 		
-		return str;
+		return String.format("%10s", str);
 	}
 }
