@@ -9,24 +9,24 @@ public class GPSDataConverter {
 
 
 
-	public static int toSeconds(String timeStr) {
-		int time = Integer.parseInt(timeStr.substring(11, 13));
-		int min = Integer.parseInt(timeStr.substring(14, 16));
-		int sek = Integer.parseInt(timeStr.substring(17));
+	public static int toSeconds(String timestr) {
+		int time = Integer.parseInt(timestr.substring(11, 13));
+		int min = Integer.parseInt(timestr.substring(14, 16));
+		int sek = Integer.parseInt(timestr.substring(17));
 
-		int tid = time * 60 * 60 + min * 60 + sek; 
+		int secs = time * 60 * 60 + min * 60 + sek; 
 		
-		return tid;
+		return secs;
 	}
 		
-		public static void main(String[] args) {
-			String timeStr = "2024-10-14T08:52:26";
+	public static void main(String[] args) {
+		String timeString = "2024-10-14T08:52:26";
 
-	      
-	       	int totalSekunder = toSeconds(timeStr);
+		
+		int totalSekunder = toSeconds(timeString);
 
-	       
-	        System.out.println("Totalt antall sekunder: " + totalSekunder);
+		
+		System.out.println("Totalt antall sekunder: " + totalSekunder);
 	}	
 		
 	

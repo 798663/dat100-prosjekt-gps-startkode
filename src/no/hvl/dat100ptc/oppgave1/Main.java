@@ -14,7 +14,7 @@ public class Main {
 		System.out.println("New time: " + k1.getTime());
 		System.out.println();
 
-
+		
 
 		System.out.println("Latitude: " + k1.getLatitude());
 		System.out.println();

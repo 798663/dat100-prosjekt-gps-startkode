@@ -1,6 +1,6 @@
 package no.hvl.dat100ptc.oppgave3;
 
-import static java.lang.Math.*;
+//import static java.lang.Math.*;
 
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.TODO;
@@ -39,24 +39,22 @@ public class GPSUtils {
 	
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
-double [] latTab = new double[gpspoints.length]; 
+		double [] latTab = new double[gpspoints.length]; 
 	
-
-
-for (int i = 0; i < gpspoints.length; i++) {
-	latTab[i] = gpspoints[i].getLatitude();
-}
-return latTab;
+		for (int i = 0; i < gpspoints.length; i++) {
+			latTab[i] = gpspoints[i].getLatitude();
+		}
+		return latTab;
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
-double [] longTab = new double[gpspoints.length];
+		double [] longTab = new double[gpspoints.length];
 
-for (int i = 0; i < gpspoints.length; i ++) {
-	longTab[i] = gpspoints[i].getLongitude();
-}
-return longTab;
+		for (int i = 0; i < gpspoints.length; i ++) {
+			longTab[i] = gpspoints[i].getLongitude();
+		}
+		return longTab;
 
 	}
 
@@ -65,8 +63,6 @@ return longTab;
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
 		// splitte opp gpspoint1 og 2 i lat og long, burk meotde ^ 
-		
-		
 		
 		double d;
 		double latitude1, longitude1, latitude2, longitude2;
@@ -94,14 +90,14 @@ return longTab;
 		
 		double a = (Math.sin(deltaphi/2)) * (Math.sin(deltaphi/2)) + Math.cos(phi1) * Math.cos(phi2) * (Math.sin(deltadelta/2)) * (Math.sin(deltadelta/2));
 		
-return a;
+		return a;
 	}
 
 	private static double compute_c(double a) {
 
 		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 -a));	
 		
-return c;
+		return c;
 	}
 
 	
@@ -121,7 +117,7 @@ return c;
 		
 		speed = distance/secs;
 		
-return speed;
+		return speed;
 	}
 
 	public static String formatTime(int secs) {
@@ -133,7 +129,7 @@ return speed;
 		int timer = secs/3600;
 
 
-         secs = secs%3600;
+        secs = secs%3600;
         
         int minutter = secs/60;
         
@@ -147,7 +143,7 @@ return speed;
 	}
 
 	
-	private static int TEXTWIDTH = 10;
+	//private static int TEXTWIDTH = 10;
 
 	public static String formatDouble(double d) {
 
