@@ -22,19 +22,9 @@ public class GPSUtils {
 		return max;
 	}
 
-	public static double findMin(double[] da) {
-
-		double min;
-
-		min = da[0];
-		
-		for (double m : da) {
-			if (m < min) {
-				min = m;
-			}
-		}
-		return min;
-	}
+	
+	
+	
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 double [] latTab = new double[gpspoints.length]; 
