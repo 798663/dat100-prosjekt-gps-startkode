@@ -123,14 +123,20 @@ return speed;
 	}
 
 	public static String formatTime(int secs) {
-
+//få delt opp i timer min sec ved rest
 		String timestr;
 		String TIMESEP = ":";
+int timer = secs/3600;
+secs = secs%3600;
 
-		throw new UnsupportedOperationException(TODO.method());
+int minutter = secs/60;
+secs = secs%60;
+
+int sekunder = secs;
 		
-		// TODO 
+		timestr = String.format("%10s", timer, TIMESEP, minutter, TIMESEP, sekunder);
 		
+		return timestr;
 	}
 	
 	private static int TEXTWIDTH = 10;
@@ -140,9 +146,10 @@ return speed;
 		String str;
 
 		
-		throw new UnsupportedOperationException(TODO.method());
+		str = String.format("%10s", d);
 		
-		// TODO
 		
+		
+		return str;
 	}
 }
