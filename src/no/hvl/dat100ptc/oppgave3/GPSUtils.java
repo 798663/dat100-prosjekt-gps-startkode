@@ -22,51 +22,29 @@ public class GPSUtils {
 		return max;
 	}
 
-	public static double findMin(double[] da) {
-
-		double min;
-		
-		min = da[0];
-		
-		for (double d:da) {
-			if (d<min) {
-				min =d ;
-				
-			}
-		}
-		
-        return min;
-		
-	}
 	
-	public static void main(String[]args) {
-		
-		double[] verdiTest= {3.8,5.9,6.2,7.7,9.1};
-	   
-		double max = findMax (verdiTest);
-		double min = findMin (verdiTest);
-		
-		System.out.println("Største verdi" + max);
-		System.out.println("Minst" + min);
-		
-	
-	}
 	
 	
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
+double [] latTab = new double[gpspoints.length]; 
+	
 
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO
+
+for (int i = 0; i < gpspoints.length; i++) {
+	latTab[i] = gpspoints[i].getLatitude();
+}
+return latTab;
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO 
+double [] longTab = new double[gpspoints.length];
+
+for (int i = 0; i < gpspoints.length; i ++) {
+	longTab[i] = gpspoints[i].getLongitude();
+}
+return longTab;
 
 	}
 
