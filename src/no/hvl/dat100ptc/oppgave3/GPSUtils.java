@@ -110,9 +110,9 @@ return c;
 		int secs;
 		double speed;
 		
-		throw new UnsupportedOperationException(TODO.method());
+	
 		
-		// TODO
+	
 
 	}
 
@@ -121,11 +121,16 @@ return c;
 		String timestr;
 		String TIMESEP = ":";
 
-		throw new UnsupportedOperationException(TODO.method());
+	 int timer = 03;
+	 int minutter = 02;
+	 int sekunder = 22;
 		
-		// TODO 
+		String tid = String.format("%02d:%02d:%02d" , timer,TIMESEP,minutter,TIMESEP ,sekunder);
 		
-	}
+		System.out.println(tid);
+		int totaltSekunder = (timer * 3600) + (minutter * 60) + sekunder;
+		return tid;
+		}
 	
 	private static int TEXTWIDTH = 10;
 
