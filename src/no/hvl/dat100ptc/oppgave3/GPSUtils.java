@@ -109,18 +109,13 @@ return c;
 
 		int secs;
 		double speed;
-<<<<<<< HEAD
-		
-	
-		
-	
-=======
+
 		double distance;
 		int secs1 = gpspoint1.getTime();
 		int secs2 = gpspoint2.getTime();
         secs = secs2 - secs1;
         distance = distance(gpspoint1, gpspoint2);
->>>>>>> e8040c4964bd2d0653c3f43c68568b4be07666cc
+
 
 		
 		
@@ -131,33 +126,38 @@ return speed;
 
 	public static String formatTime(int secs) {
 //få delt opp i timer min sec ved rest
+		
 		String timestr;
 		String TIMESEP = ":";
-int timer = secs/3600;
-secs = secs%3600;
 
-<<<<<<< HEAD
-	 int timer = 03;
-	 int minutter = 02;
-	 int sekunder = 22;
+		int timer = secs/3600;
+
+        secs = secs%3600;
+        
+        int minutter = secs/60;
+        
+        int sekunder = secs%60;
 		
 		String tid = String.format("%02d:%02d:%02d" , timer,TIMESEP,minutter,TIMESEP ,sekunder);
 		
 		System.out.println(tid);
+		
 		int totaltSekunder = (timer * 3600) + (minutter * 60) + sekunder;
+		
 		return tid;
-		}
-=======
-int minutter = secs/60;
-secs = secs%60;
+		
+	
 
-int sekunder = secs;
+
+
+
+
 		
 		timestr = String.format("%10s", timer, TIMESEP, minutter, TIMESEP, sekunder);
 		
 		return timestr;
 	}
->>>>>>> e8040c4964bd2d0653c3f43c68568b4be07666cc
+
 	
 	private static int TEXTWIDTH = 10;
 
