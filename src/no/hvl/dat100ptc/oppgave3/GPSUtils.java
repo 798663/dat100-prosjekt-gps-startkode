@@ -125,15 +125,15 @@ return speed;
 	}
 
 	public static String formatTime(int secs) {
+		
 		String timestr;
 		String TIMESEP = ":";
-int timer = secs/3600;
-secs = secs%3600;
 
-<<<<<<< HEAD
+		
 		int timer = secs/3600;
 
-        secs = secs%3600;
+
+         secs = secs%3600;
         
         int minutter = secs/60;
         
@@ -141,15 +141,8 @@ secs = secs%3600;
 		
 		timestr = String.format("%10s", timer, TIMESEP, minutter, TIMESEP, sekunder);
 		
-=======
-int minutter = secs/60;
-
-
-int sekunder = secs%60;
-		
-		timestr = String.format("  %02d%s%02d%s%02d", timer, TIMESEP, minutter, TIMESEP, sekunder);
 			
->>>>>>> 7d84ad9a53311e9890603b9a849d7b5b867440bd
+
 		return timestr;
 	}
 
