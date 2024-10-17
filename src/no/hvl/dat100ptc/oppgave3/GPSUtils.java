@@ -138,21 +138,6 @@ return speed;
         
         int sekunder = secs%60;
 		
-		String tid = String.format("%02d:%02d:%02d" , timer,TIMESEP,minutter,TIMESEP ,sekunder);
-		
-		System.out.println(tid);
-		
-		int totaltSekunder = (timer * 3600) + (minutter * 60) + sekunder;
-		
-		return tid;
-		
-	
-
-
-
-
-
-		
 		timestr = String.format("%10s", timer, TIMESEP, minutter, TIMESEP, sekunder);
 		
 		return timestr;
