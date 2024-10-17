@@ -109,11 +109,17 @@ return c;
 
 		int secs;
 		double speed;
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO
+		double distance;
+		int secs1 = gpspoint1.getTime();
+		int secs2 = gpspoint2.getTime();
+        secs = secs2 - secs1;
+        distance = distance(gpspoint1, gpspoint2);
 
+		
+		
+		speed = distance/secs;
+		
+return speed;
 	}
 
 	public static String formatTime(int secs) {
