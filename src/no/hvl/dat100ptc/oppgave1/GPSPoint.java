@@ -1,5 +1,6 @@
 package no.hvl.dat100ptc.oppgave1;
 
+
 public class GPSPoint {
 
 	private int time;
