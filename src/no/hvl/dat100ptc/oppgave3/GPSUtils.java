@@ -62,30 +62,44 @@ return longTab;
 
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
+		// splitte opp gpspoint1 og 2 i lat og long, burk meotde ^ 
+		
+		
+		
 		double d;
 		double latitude1, longitude1, latitude2, longitude2;
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO 
+        latitude1 = gpspoint1.getLatitude();
+        longitude1 = gpspoint1.getLongitude();
+        latitude2 = gpspoint2.getLatitude();
+        longitude2 = gpspoint2.getLongitude();
+        
+        double latitude1R = Math.toRadians(latitude1);
+        double longitude1R = Math.toRadians(longitude1);
+        double latitude2R = Math.toRadians(latitude2);
+        double longitude2R = Math.toRadians(longitude2);
+        double endringLat = latitude2R - latitude1R;
+        double endringLong = longitude2R - longitude1R;
+        double a = compute_a(latitude1R, latitude2R, endringLat, endringLong);
+        double c = compute_c(a);
+		
+		d = R * c;
+		
+		return d;
 	}
 	
 	private static double compute_a(double phi1, double phi2, double deltaphi, double deltadelta) {
 	
-		throw new UnsupportedOperationException(TODO.method());
 		
-		// TODO 
-
+		double a = (Math.sin(deltaphi/2)) * (Math.sin(deltaphi/2)) + Math.cos(phi1) * Math.cos(phi2) * (Math.sin(deltadelta/2)) * (Math.sin(deltadelta/2));
+		
+return a;
 	}
 
 	private static double compute_c(double a) {
 
+		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 -a));	
 		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		
-		// TODO 
-
+return c;
 	}
 
 	
