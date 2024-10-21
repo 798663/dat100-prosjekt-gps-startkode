@@ -162,10 +162,22 @@ public class GPSComputer {
 
 	public double totalKcal(double weight) {
 
-		double totalkcal = 0;
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		double totalKcal = 0;
+	/* Får opp failure her. Noke feil ifht
+		int time;
+		double speed;
+		double distance;
+		for (int i = 0; i < gpspoints.length-1; i++) {
+			GPSPoint p1 = gpspoints[i];
+			GPSPoint p2 = gpspoints[i+1];
+			distance = GPSUtils.distance( p1, p2);
+			time = p2.getTime() - p1.getTime();
+			speed = GPSUtils.speed(p1, p2);
+			
+			totalKcal += kcal(weight, time, speed);
+		}
+		*/
+		return totalKcal;
 		
 	}
 	
@@ -173,8 +185,12 @@ public class GPSComputer {
 	
 	public void displayStatistics() {
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+	System.out.println("Total time             :" + totalTime());
+	System.out.println("Total distanse         :" + totalDistance());
+	System.out.println("Total elevation        :" + totalElevation());
+	System.out.println("Max Speed              :" + maxSpeed());
+	System.out.println("Average Speed          :" + averageSpeed());
+	System.out.println("Energy                 :" + totalKcal());
 		
 	}
 
