@@ -77,11 +77,14 @@ public class GPSComputer {
 	}
 
 	public int totalTime() {
-
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
+		
+	int startTime = gpspoints[0].getTime();	  //tidspunktet for det første punkt i GPS
+	int endTime = gpspoints[gpspoints.length - 1].getTime() ;    //tidspunktet for det siste punkt i GPS
+	
+	return startTime - endTime;      //total tid i sekunder
 		
 	}
+	
 		
 
 	public double[] speeds() {
