@@ -39,7 +39,7 @@ public class GPSComputer {
 	}
 	
 
-	public double totalElevation1() {
+	public double totalElevation() {
 
 		double totalElevation = 0;
 
@@ -47,12 +47,13 @@ public class GPSComputer {
 			GPSPoint p1 = gpspoints[i];
 			GPSPoint p2 = gpspoints[i + 1];
 		 
-			double elevationChange = p2.getElevation() - p1.getElevation();
+			double elevationChange = (p2.getElevation() - p1.getElevation());
 	
-			if (elevationChange > 0) {
-				totalElevation += elevationChange;
-	
+			if (elevationChange < 0) {
+				totalElevation += 0;
 			} 
+			else
+				totalElevation += elevationChange;
 		}	
 	
 		return totalElevation; 
