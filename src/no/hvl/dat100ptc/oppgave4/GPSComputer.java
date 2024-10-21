@@ -60,14 +60,20 @@ public class GPSComputer {
 	}
 
 	public int totalTime() {
+		int tid = 0;
+		for (int i = 0; i < gpspoints.length-1; i++) {
 		
-		
-	     
-		
+			GPSPoint gpspoint1 = gpspoints[i];
+			GPSPoint gpspoint2 = gpspoints[i+1];
+			
+			int time1 = gpspoint1.getTime();
+			int time2 = gpspoint2.getTime();
+			
+		    tid += (time2 - time1);
+		}
+		    return tid;
 	}
 	
-		
-
 	public double[] speeds() {
 
 		double[] speeds = new double[gpspoints.length-1];
@@ -87,13 +93,11 @@ public class GPSComputer {
 	}
 
 	public double averageSpeed() {
-        double distanse = 0;
+        double distanse = totalDistance();
         double tid = totalTime();
-		double average = 0;
-		for (int i = 0; i < gpspoints.length-1; i++) {
-		distanse += i;
-		i++;
-	}
+		double average;
+	
+	
 		average = distanse / tid;
 		return average;
 	}
