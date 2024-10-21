@@ -56,14 +56,24 @@ public class GPSComputer {
 	    return R * c;
 	}
 
-	public double totalElevation() {
+	public double totalElevation1() {
 
-		double elevation = 0;
+		double totalElevation = 0;
 
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO 
-		
+		for (int i = 0; i < gpspoints.length - 1; i++) {
+			GPSPoint p1 = gpspoints[i];
+			GPSPoint p2 = gpspoints[i + 1];
+		 
+			double elevationChange = p2.getElevation() - p1.getElevation();
+	
+			if (elevationChange > 0) {
+				totalElevation += elevationChange;
+	
+			} 
+		}	
+	
+		return totalElevation; 
+	
 	}
 
 	public int totalTime() {
