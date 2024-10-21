@@ -1,13 +1,16 @@
 package no.hvl.dat100ptc.oppgave2;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class GPSDataFileReader {
 
 	// entry separator in CSV files
-	private static String SEP_STR = ",";
+private static String SEP_STR = ",";
 
 	private static  String GPSDATA_FORMAT = "time,lat,lon,elevation,accuracy,bearing,speed,satellites,"
 			+ "provider,hdop,vdop,pdop,geoidheight,ageofdgpsdata,dgpsid,activity,battery,annotation";
