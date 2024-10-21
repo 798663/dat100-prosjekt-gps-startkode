@@ -57,6 +57,7 @@ public class GPSPoint {
 		this.elevation = elevation;
 	}
 	
+        @SuppressWarnings("override")
 	public String toString() {
 		
 		String str;
