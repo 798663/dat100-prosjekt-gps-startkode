@@ -89,7 +89,7 @@ public class GPSComputer {
 		
 		double speed = Distance / timeDifference;
 		
-		speeds[i] = speed;   // legge på hastighet til i tabellen
+		speeds[i] = speed; 
 		
 		}
 		
@@ -99,11 +99,15 @@ public class GPSComputer {
 	
 	public double maxSpeed() {
 		
-		double maxspeed = 0;
-		
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
-	
+		double maxSpeed = 0;
+		double [] speed = speeds();
+		for (int i = 0; i < speed.length-1; i++) {
+			double p1 = speed[i];
+			if (p1 > maxSpeed) {
+				maxSpeed = p1;
+			}
+		}
+	return maxSpeed;
 	}
 
 	public double averageSpeed() {
