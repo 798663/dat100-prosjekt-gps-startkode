@@ -1,12 +1,9 @@
 package no.hvl.dat100ptc.oppgave4;
 
+import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.oppgave2.GPSData;
-import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
 import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
-import no.hvl.dat100ptc.oppgave3.GPSUtils;
-
-import no.hvl.dat100ptc.TODO;
 
 public class GPSComputer {
 	
@@ -30,10 +27,10 @@ public class GPSComputer {
 	public double totalDistance() {
 
 		double distance = 0;
-     for (int i= 0; i< gpspoints.length - 1;i++) {
-      GPSPoint p1 = gpspoints[i];
-      GPSPoint p2 = gpspoints[i+1];
-      distance += calculateDistance(p1,p2);
+    	for (int i= 0; i< gpspoints.length - 1;i++) {
+      		GPSPoint p1 = gpspoints[i];
+      		GPSPoint p2 = gpspoints[i+1];
+      		distance += calculateDistance(p1,p2);
       
      }
 

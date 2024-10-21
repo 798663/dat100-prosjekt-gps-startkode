@@ -11,7 +11,6 @@ public class GPSData {
 
 		gpspoints = new GPSPoint[n];
 		
-		antall=0 ;
 	}
 
 
@@ -36,7 +35,7 @@ public class GPSData {
 
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
-		int time1 = Integer.parseInt(time);
+		int time1 = GPSDataConverter.toSeconds(time); 
 		double latitude1 = Double.parseDouble(latitude);
 		double longitude1 = Double.parseDouble(longitude);
 		double elevation1 = Double.parseDouble(elevation);

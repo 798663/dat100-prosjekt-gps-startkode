@@ -6,10 +6,6 @@ import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSDataConverter {
 	
-
-
-
-
 	public static int toSeconds(String timestr) {
 		int time = Integer.parseInt(timestr.substring(11, 13));
 		int min = Integer.parseInt(timestr.substring(14, 16));
@@ -20,16 +16,7 @@ public class GPSDataConverter {
 		return secs;
 	}
 		
-	
-	
-		
-	
-	  
-
 	public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
-
-	
-
 
 		int time1 = toSeconds(timeStr);
 		double latitude1 = Double.parseDouble(latitudeStr);
