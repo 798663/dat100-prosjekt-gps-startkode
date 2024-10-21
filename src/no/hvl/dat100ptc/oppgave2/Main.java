@@ -2,6 +2,7 @@ package no.hvl.dat100ptc.oppgave2;
 
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -14,9 +15,9 @@ public class Main {
 		
 		gpsData.insertGPS(gpspoint1);
 		gpsData.insertGPS(gpspoint2);
-		
+
 		
 		gpsData.print();
-		
+
 	}
 }
