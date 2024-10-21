@@ -4,6 +4,7 @@ import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.oppgave2.GPSData;
 import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
+import no.hvl.dat100ptc.oppgave3.GPSUtils;
 
 public class GPSComputer {
 	
@@ -30,28 +31,13 @@ public class GPSComputer {
     	for (int i= 0; i< gpspoints.length - 1;i++) {
       		GPSPoint p1 = gpspoints[i];
       		GPSPoint p2 = gpspoints[i+1];
-      		distance += calculateDistance(p1,p2);
-      
+      		distance += GPSUtils.distance(p1,p2);
      }
 
 		return distance;
 
 	}
 	
-	private double calculateDistance(GPSPoint p1, GPSPoint p2) {
-		
-		final int R = 6371_000;
-		double latDistance = Math.toRadians(p2.getLatitude() - p1.getLatitude());
-		double lonDistance = Math.toRadians(p2.getLongitude() - p1.getLongitude());
-		
-		double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) +
-	               Math.cos(Math.toRadians(p1.getLatitude())) * Math.cos(Math.toRadians(p2.getLatitude())) *
-	               Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
-
-	    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-	    return R * c;
-	}
 
 	public double totalElevation1() {
 
@@ -75,10 +61,8 @@ public class GPSComputer {
 
 	public int totalTime() {
 		
-	int startTime = gpspoints[0].getTime();	  //tidspunktet for det første punkt i GPS
-	int endTime = gpspoints[gpspoints.length - 1].getTime() ;    //tidspunktet for det siste punkt i GPS
-	
-	return startTime - endTime;      //total tid i sekunder
+		
+	     
 		
 	}
 	
@@ -103,12 +87,15 @@ public class GPSComputer {
 	}
 
 	public double averageSpeed() {
-
+        double distanse = 0;
+        double tid = totalTime();
 		double average = 0;
-		
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
-		
+		for (int i = 0; i < gpspoints.length-1; i++) {
+		distanse += i;
+		i++;
+	}
+		average = distanse / tid;
+		return average;
 	}
 
 
