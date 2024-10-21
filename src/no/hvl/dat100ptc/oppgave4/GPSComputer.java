@@ -78,10 +78,23 @@ public class GPSComputer {
 	public double[] speeds() {
 
 		double[] speeds = new double[gpspoints.length-1];
+	   
+		for (int i = 0; i < gpspoints.length - 1;i++) {
+		GPSPoint p1 = gpspoints[i];
+		GPSPoint p2 = gpspoints[i+1];
 		
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
+		double Distance = GPSUtils.distance(p1, p2);
 		
+		int timeDifference = p2.getTime() - p1.getTime();
+		
+		double speed = Distance / timeDifference;
+		
+		speeds[i] = speed;   // legge på hastighet til i tabellen
+		
+		}
+		
+		return speeds;
+	
 	}
 	
 	public double maxSpeed() {
