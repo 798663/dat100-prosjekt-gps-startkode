@@ -127,7 +127,7 @@ public class GPSComputer {
 	public double kcal(double weight, int secs, double speed) {
 
 		double kcal;
-        double t = secs/3600;
+        double t = secs/3600.0;
 
 		double met = 0;		
 		double speedmph = speed * MS;
@@ -163,7 +163,6 @@ public class GPSComputer {
 	public double totalKcal(double weight) {
 
 		double totalKcal = 0;
-	/* Får opp failure her. Noke feil ifht
 		int time;
 		double speed;
 		double distance;
@@ -176,7 +175,7 @@ public class GPSComputer {
 			
 			totalKcal += kcal(weight, time, speed);
 		}
-		*/
+		
 		return totalKcal;
 		
 	}
@@ -184,13 +183,20 @@ public class GPSComputer {
 	private static double WEIGHT = 80.0;
 	
 	public void displayStatistics() {
-
-	System.out.println("Total time             :" + totalTime());
-	System.out.println("Total distanse         :" + totalDistance());
-	System.out.println("Total elevation        :" + totalElevation());
-	System.out.println("Max Speed              :" + maxSpeed());
-	System.out.println("Average Speed          :" + averageSpeed());
-	System.out.println("Energy                 :" + totalKcal());
+		double distanse = totalDistance();
+		distanse = distanse / 1000;
+		
+		double gjsnitt = averageSpeed();
+		gjsnitt = gjsnitt /1000;
+		
+	System.out.println("==============================================");
+	System.out.println("Total time             :         " + totalTime());
+	System.out.println("Total distanse         :         " + totalDistance());
+	System.out.println("Total elevation        :         " + distanse);
+	System.out.println("Max Speed              :         " + maxSpeed());
+	System.out.println("Average Speed          :         " + gjsnitt);
+	System.out.println("Energy                 :         " + totalKcal(WEIGHT));
+	System.out.println("==============================================");
 		
 	}
 
