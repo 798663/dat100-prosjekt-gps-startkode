@@ -92,8 +92,8 @@ public class ShowRoute extends EasyGraphics {
 		}
 	} */
 	public void showRouteMap(int ybase) {
-		// Tegner ruten basert på GPS-punkter
-		for (int i = 0; i < gpspoints.length - 1; i++) {
+		
+		for (int i = 0; i < gpspoints.length - 2; i++) {
 			
 			double latitude = gpspoints[i].getLatitude();
 			double longitude = gpspoints[i].getLongitude();
@@ -104,8 +104,21 @@ public class ShowRoute extends EasyGraphics {
 	
 			
 			setColor(50, 255, 255);
-			drawCircle(x, y, 3);  // Tegner punktet med radius 3 piksler
+			drawCircle(x, y, 3); 
+			if (i > 0) {
+			double x0 = gpspoints[i+1].getLatitude();
+			double y0 = gpspoints[i+1].getLongitude();
+			
+			int x1 = MARGIN + (int)((y0- minlon) * xstep);
+			int y1 = ybase - (int)((x0 - minlat) * ystep); 
+			
+			
+			setColor(50, 255, 255);
+			drawLine(x, y, x1, y1);
 		}
+	}
+	
+		
 	}
 	
 
