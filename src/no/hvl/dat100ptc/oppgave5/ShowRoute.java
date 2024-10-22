@@ -50,9 +50,9 @@ public class ShowRoute extends EasyGraphics {
 		
 		showRouteMap(MARGIN + MAPYSIZE);
 
-		//replayRoute(MARGIN + MAPYSIZE);
+		replayRoute(MARGIN + MAPYSIZE);
 		
-		//showStatistics();
+		showStatistics();
 	}
 
 	public double scale(int maxsize, double minval, double maxval) {
@@ -154,10 +154,28 @@ public class ShowRoute extends EasyGraphics {
 	}
 
 	public void replayRoute(int ybase) {
+		for (int i = 0; i < gpspoints.length - 1; i++) {
+		double latitude = gpspoints[i].getLatitude();
+		double longitude = gpspoints[i].getLongitude();
+		int circle;
+		
+		int x = MARGIN + (int)((longitude - minlon) * xstep);
+		int y = ybase - (int)((latitude - minlat) * ystep); 
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		
+		setColor(0, 0, 255);
+		circle = drawCircle(x, y, 3); 
+		
+			double x0 = gpspoints[i+1].getLatitude();
+			double y0 = gpspoints[i+1].getLongitude();
+			
+			int x1 = MARGIN + (int)((y0- minlon) * xstep);
+			int y1 = ybase - (int)((x0 - minlat) * ystep); 
+		setSpeed(10);
+		moveCircle(circle, x1, y1);
+		
 		
 	}
 
+}
 }
