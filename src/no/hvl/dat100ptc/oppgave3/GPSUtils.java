@@ -122,13 +122,13 @@ public class GPSUtils {
 	public static String formatTime(int secs) {
 		String timestr;
 		String TIMESEP = ":";
-int timer = secs/3600;
-secs = secs%3600;
+		int timer = secs/3600;
+		secs = secs%3600;
 
-int minutter = secs/60;
+		int minutter = secs/60;
 
 
-int sekunder = secs%60;
+		int sekunder = secs%60;
 		
 		timestr = String.format("  %02d%s%02d%s%02d", timer, TIMESEP, minutter, TIMESEP, sekunder);
 			
