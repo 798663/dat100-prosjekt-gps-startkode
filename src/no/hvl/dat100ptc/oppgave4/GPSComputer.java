@@ -152,12 +152,12 @@ public class GPSComputer {
 		}
 		else if (speedmph > 20) {
 			met = 16.0;	
-	}
+		}
 		kcal = met * weight * t;
 		
 		
 		
-	return kcal;	
+		return kcal;	
 	}
 
 	public double totalKcal(double weight) {
@@ -165,11 +165,11 @@ public class GPSComputer {
 		double totalKcal = 0;
 		int time;
 		double speed;
-		double distance;
+		// distance;
 		for (int i = 0; i < gpspoints.length-1; i++) {
 			GPSPoint p1 = gpspoints[i];
 			GPSPoint p2 = gpspoints[i+1];
-			distance = GPSUtils.distance( p1, p2);
+			//distance = GPSUtils.distance( p1, p2);
 			time = p2.getTime() - p1.getTime();
 			speed = GPSUtils.speed(p1, p2);
 			
