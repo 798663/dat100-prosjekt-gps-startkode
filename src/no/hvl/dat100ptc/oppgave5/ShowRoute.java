@@ -134,23 +134,28 @@ public class ShowRoute extends EasyGraphics {
 		double distanse = gpscomputer.totalDistance();
 		distanse = distanse / 1000;
 		
-		double gjsnitt = gpscomputer.averageSpeed();
-		gjsnitt = gjsnitt /1000;
+		double snittFart = gpscomputer.averageSpeed();
+		snittFart = snittFart /1000;
 		
-	String string1 = ("Total time             :         " + gpscomputer.totalTime());
-	String string2 = ("Total distanse         :         " + gpscomputer.totalDistance());
-	String string3 = ("Total elevation        :         " + distanse);
-	String string4 = ("Max Speed              :         " + gpscomputer.maxSpeed());
-	String string5 = ("Average Speed          :         " + gjsnitt);
-	String string6 = ("Energy                 :         " + gpscomputer.totalKcal(WEIGHT));
+		int tid = gpscomputer.totalTime();
+		String tid1 = GPSUtils.formatTime(tid);
+		
+		
+		
+	String string1 = ("Total time             :         " + tid1);
+	String string2 = ("Total distanse         :         " + String.format("%.2f", distanse) + "km");
+	String string3 = ("Total elevation        :         " + String.format("%.2f", gpscomputer.totalElevation()) + "m");
+	String string4 = ("Max Speed              :         " + String.format("%.2f", gpscomputer.maxSpeed()) + "km/t");
+	String string5 = ("Average Speed          :         " + String.format("%.2f", snittFart) + "km/t");
+	String string6 = ("Energy                 :         " + String.format("%.2f", gpscomputer.totalKcal(WEIGHT)) + "kcal");
 	
 	
-		drawString(string1, x, y-y);
-		drawString(string2, x, y);
-		drawString(string3, x, y*2);
-		drawString(string4, x, y*3);
-		drawString(string5, x, y*4);
-		drawString(string6, x, y*5);
+		drawString(string1, x, y);
+		drawString(string2, x, y*2);
+		drawString(string3, x, y*3);
+		drawString(string4, x, y*4);
+		drawString(string5, x, y*5);
+		drawString(string6, x, y*6);
 	}
 
 	public void replayRoute(int ybase) {
