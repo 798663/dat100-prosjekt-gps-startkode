@@ -94,16 +94,16 @@ public class ShowRoute extends EasyGraphics {
 	public void showRouteMap(int ybase) {
 		// Tegner ruten basert på GPS-punkter
 		for (int i = 0; i < gpspoints.length - 1; i++) {
-			// Hent latitude (høyde) og longitude (bredde)
+			
 			double latitude = gpspoints[i].getLatitude();
 			double longitude = gpspoints[i].getLongitude();
 	
-			// Skaler latitude og longitude til piksler som kan tegnes
+			
 			int x = MARGIN + (int)((longitude - minlon) * xstep);
-			int y = ybase - (int)((latitude - minlat) * ystep); // Merk at y-aksen går nedover
+			int y = ybase - (int)((latitude - minlat) * ystep); 
 	
-			// Tegn sirkelen på den skalerte posisjonen
-			setColor(0, 0, 255);
+			
+			setColor(50, 255, 255);
 			drawCircle(x, y, 3);  // Tegner punktet med radius 3 piksler
 		}
 	}
@@ -112,13 +112,32 @@ public class ShowRoute extends EasyGraphics {
 	public void showStatistics() {
 
 		int TEXTDISTANCE = 20;
-
+		final double WEIGHT = 80.0;
+		int x = MARGIN;
+		int y = TEXTDISTANCE;
 		setColor(0,0,0);
 		setFont("Courier",12);
 		
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
+		double distanse = gpscomputer.totalDistance();
+		distanse = distanse / 1000;
 		
+		double gjsnitt = gpscomputer.averageSpeed();
+		gjsnitt = gjsnitt /1000;
+		
+	String string1 = ("Total time             :         " + gpscomputer.totalTime());
+	String string2 = ("Total distanse         :         " + gpscomputer.totalDistance());
+	String string3 = ("Total elevation        :         " + distanse);
+	String string4 = ("Max Speed              :         " + gpscomputer.maxSpeed());
+	String string5 = ("Average Speed          :         " + gjsnitt);
+	String string6 = ("Energy                 :         " + gpscomputer.totalKcal(WEIGHT));
+	
+	
+		drawString(string1, x, y-y);
+		drawString(string2, x, y);
+		drawString(string3, x, y*2);
+		drawString(string4, x, y*3);
+		drawString(string5, x, y*4);
+		drawString(string6, x, y*5);
 	}
 
 	public void replayRoute(int ybase) {
