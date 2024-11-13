@@ -101,12 +101,13 @@ public class GPSComputer {
 		
 		double maxSpeed = 0;
 		double [] speed = speeds();
-		for (int i = 0; i < speed.length-1; i++) {
+		for (int i = 0; i < speed.length; i++) {
 			double p1 = speed[i];
 			if (p1 > maxSpeed) {
 				maxSpeed = p1;
 			}
 		}
+	
 	return maxSpeed;
 	}
 
